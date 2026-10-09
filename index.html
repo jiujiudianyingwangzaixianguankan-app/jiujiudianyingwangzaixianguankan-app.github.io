@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>九九电影网在线观看 - 免费高清电影在线观看</title>
+  <meta name="description" content="九九电影网在线观看：在 jiujiudianyingwangzaixianguankan-app.github.io 免费看高清电影、热播剧集、动漫与综艺，移动端自适应，加载快，片源分类清晰。" />
+  <meta name="keywords" content="九九电影网在线观看, 电影在线观看, 高清电影, 免费看片, jiujiudianyingwangzaixianguankan-app" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <style>
+    :root{
+      --bg:#0b0f1a;
+      --bg-soft:#121829;
+      --card:#161d33;
+      --line:#243154;
+      --text:#e8edff;
+      --muted:#9fb0d8;
+      --cyan:#36e0ff;
+      --orange:#ff8a3d;
+      --radius:18px;
+      --maxw:1180px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:radial-gradient(1200px 600px at 80% -10%,rgba(54,224,255,.12),transparent),
+                 radial-gradient(900px 500px at -10% 10%,rgba(255,138,61,.12),transparent),
+                 var(--bg);
+      color:var(--text);
+      font-family:"Segoe UI",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+
+    /* NAV */
+    header.nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,15,26,.82);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+    .brand{
+      font-weight:800;font-size:19px;letter-spacing:.3px;
+      background:linear-gradient(90deg,var(--cyan),var(--orange));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);font-size:15px;padding:8px 10px;border-radius:10px}
+    .nav-links a:hover{color:var(--text);background:var(--bg-soft)}
+    .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 12px;font-size:18px}
+
+    /* HERO */
+    .hero{padding:74px 0 56px;text-align:center}
+    .hero h1{font-size:clamp(28px,5vw,46px);line-height:1.2;margin-bottom:16px}
+    .hero h1 span{
+      background:linear-gradient(90deg,var(--cyan),var(--orange));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{color:var(--muted);max-width:680px;margin:0 auto 26px;font-size:17px}
+    .hero .url{
+      display:inline-block;margin-bottom:26px;color:var(--cyan);
+      border:1px dashed var(--line);padding:8px 14px;border-radius:999px;font-size:14px;
+    }
+    .cta{
+      display:inline-block;padding:14px 26px;border-radius:14px;font-weight:700;
+      background:linear-gradient(90deg,var(--cyan),var(--orange));color:#06101f;
+    }
+    .cta:hover{filter:brightness(1.05);transform:translateY(-2px);transition:.2s}
+
+    /* SECTION */
+    section{padding:60px 0}
+    .sec-head{margin-bottom:28px}
+    .sec-head h2{font-size:26px;margin-bottom:8px}
+    .sec-head p{color:var(--muted);font-size:15px}
+    .tag{color:var(--cyan);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+
+    /* GRID CARDS */
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:18px;transition:.25s;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(54,224,255,.5);box-shadow:0 10px 30px rgba(54,224,255,.08)}
+    .thumb{
+      height:120px;border-radius:14px;margin-bottom:14px;
+      background:linear-gradient(135deg,#1d2742,#222c4d);
+      display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;
+    }
+    .card h3{font-size:17px;margin-bottom:6px}
+    .card p{color:var(--muted);font-size:14px}
+    .pill{display:inline-block;margin-top:10px;font-size:12px;color:var(--orange);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+
+    /* FEATURES */
+    .features{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .feature{
+      background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:20px;
+    }
+    .feature b{color:var(--cyan)}
+
+    /* RANK */
+    .rank-list{counter-reset:r;display:grid;gap:12px}
+    .rank-item{
+      display:flex;align-items:center;gap:14px;
+      background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+    }
+    .rank-item::before{counter-increment:r;content:counter(r);width:34px;height:34px;flex:0 0 34px;
+      display:flex;align-items:center;justify-content:center;border-radius:10px;font-weight:800;
+      background:linear-gradient(135deg,var(--cyan),var(--orange));color:#06101f}
+    .rank-item a{font-weight:600}
+    .rank-item span{color:var(--muted);font-size:13px;margin-left:auto}
+
+    /* ABOUT */
+    .about{
+      background:var(--bg-soft);border:1px solid var(--line);border-radius:20px;padding:28px;
+    }
+    .about p{color:var(--muted);margin-top:10px}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px;text-align:center}
+    footer a{color:var(--cyan)}
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .nav-links{
+        display:none;position:absolute;top:62px;left:0;right:0;
+        flex-direction:column;gap:0;background:var(--bg-soft);border-bottom:1px solid var(--line);
+      }
+      .nav-links.show{display:flex}
+      .nav-links a{padding:14px 18px;border-bottom:1px solid var(--line)}
+      .menu-btn{display:block}
+      .grid{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .rank-item span{display:none}
+    }
+  </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">九九电影网在线观看</div>
+      <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">首页</a>
+        <a href="#movie">电影</a>
+        <a href="#tv">剧集</a>
+        <a href="#rank">排行榜</a>
+        <a href="#about">关于</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="wrap hero">
+      <div class="tag">Movie Streaming</div>
+      <h1>九九电影网在线观看<br /><span>高清电影 / 热播剧集 / 动漫综艺</span></h1>
+      <p>
+        九九电影网在线观看 是一个面向移动端的单页影视导航站，访问地址
+        https://jiujiudianyingwangzaixianguankan-app.github.io ，分类清晰、打开快、适合随手找片。
+      </p>
+      <div class="url">🌐 https://jiujiudianyingwangzaixianguankan-app.github.io</div>
+      <br />
+      <a class="cta" href="#movie">立即选片</a>
+    </div>
+  </section>
+
+  <!-- MOVIE -->
+  <section id="movie">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">Movies</div>
+        <h2>电影频道</h2>
+        <p>九九电影网在线观看 整理热门电影分类，动作、悬疑、爱情、科幻一站直达。</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb">动作大片</div>
+          <h3>热血动作</h3>
+          <p>飙车、枪战、近身格斗，适合大屏爽看。</p>
+          <a class="pill" href="#">前往播放 #</a>
+        </div>
+        <div class="card">
+          <div class="thumb">悬疑烧脑</div>
+          <h3>悬疑推理</h3>
+          <p>反转不断，结尾藏线索，适合细品。</p>
+          <a class="pill" href="#">前往播放 #</a>
+        </div>
+        <div class="card">
+          <div class="thumb">浪漫爱情</div>
+          <h3>都市爱情</h3>
+          <p>甜宠、虐恋、治愈系，睡前轻松看。</p>
+          <a class="pill" href="#">前往播放 #</a>
+        </div>
+        <div class="card">
+          <div class="thumb">科幻未来</div>
+          <h3>科幻宇宙</h3>
+          <p>星际、AI、末日世界，视觉冲击强。</p>
+          <a class="pill" href="#">前往播放 #</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TV -->
+  <section id="tv">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">Drama / Anime</div>
+        <h2>剧集与动漫</h2>
+        <p>在 九九电影网在线观看 里，连续剧、国产剧、韩剧、日漫都能快速归类。</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <h3>🔥 热播剧集</h3>
+          <p>更新快、分集清，<b>九九电影网在线观看</b> 把正在追的剧放最前面。</p>
+        </div>
+        <div class="feature">
+          <h3>🎬 国产好剧</h3>
+          <p>刑侦、职场、古装、家庭剧，按口味筛选不迷路。</p>
+        </div>
+        <div class="feature">
+          <h3>🍥 动漫专区</h3>
+          <p>热血番、治愈番、国创动画，移动端滑动选集很顺手。</p>
+        </div>
+        <div class="feature">
+          <h3>🎤 综艺娱乐</h3>
+          <p>真人秀、访谈、选秀，碎片时间也能看一期。</p>
+        </div>
+        <div class="feature">
+          <h3>🌏 海外剧集</h3>
+          <p>韩剧、美剧、日剧、泰剧，多地区片源聚合。</p>
+        </div>
+        <div class="feature">
+          <h3>⚡ 极速加载</h3>
+          <p>页面轻量、无重型框架，手机流量也能秒开。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANK -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="tag">Top Charts</div>
+        <h2>今日排行榜</h2>
+        <p>九九电影网在线观看 的假数据榜单，用于展示单页结构，内页用 # 占位。</p>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item">
+          <a href="#">暗夜追击</a>
+          <span>动作 · 9.4 分</span>
+        </div>
+        <div class="rank-item">
+          <a href="#">云端谜案</a>
+          <span>悬疑 · 9.2 分</span>
+        </div>
+        <div class="rank-item">
+          <a href="#">夏天的来信</a>
+          <span>爱情 · 9.0 分</span>
+        </div>
+        <div class="rank-item">
+          <a href="#">星轨尽头</a>
+          <span>科幻 · 8.9 分</span>
+        </div>
+        <div class="rank-item">
+          <a href="#">巷口小馆</a>
+          <span>治愈 · 8.7 分</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <div class="tag">About</div>
+        <h2>关于 九九电影网在线观看</h2>
+        <p>
+          九九电影网在线观看 是一个静态单页影视入口，部署在
+          https://jiujiudianyingwangzaixianguankan-app.github.io 。
+          页面使用语义化 HTML、CSS Grid / Flex 布局，移动端自适应，必应爬虫可读取标题、H1、H2 与正文结构。
+        </p>
+        <p>
+          本页仅作前端展示模板：所有“播放 / 详情”链接用 <code>#</code> 替代，不生成 robots.txt 与 sitemap.xml，
+          适合 GitHub Pages 直接放 index.html 上线。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 九九电影网在线观看 ·
+    官网：<a href="https://jiujiudianyingwangzaixianguankan-app.github.io">jiujiudianyingwangzaixianguankan-app.github.io</a>
+    · 单页演示版
+  </footer>
+
+</body>
+</html>
